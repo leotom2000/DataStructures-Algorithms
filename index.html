@@ -1,7 +1,52 @@
 <html>
-<head><title>Shape Quest </title></head>
+<head><title>Shape Quest </title>
+<script>
 
-<body>
+function loadDefaults(){
+var shapes = document.getElementsByTagName('div');
+var rectangle = shapes[1];
+rectangle.addEventListener('click', function(){ showShape(this.innerHTML ) } );
+}
+
+
+function showShape(shape){
+eval( "show"+ shape + "()"  );
+}
+
+function showRectangle(){
+debugger;
+
+document.getElementById('attrib1').innerHTML="Height";
+document.getElementById('attrib2').innerHTML="Width";
+
+document.getElementById('input1').value="60";
+document.getElementById('input2').value="40";
+
+document.getElementById('unit1').innerHTML="mm";
+document.getElementById('unit2').innerHTML="mm";
+
+document.getElementById('resArrtib1').innerHTML="Perimeter :";
+document.getElementById('resArrtib2').innerHTML="Area : ";
+
+var height = Number(document.getElementById('input1').value);
+var width = Number(document.getElementById('input2').value);
+var res1 =  2 * ( height +  width);
+var res2 = height *  width ;
+
+document.getElementById('result1').innerHTML=res1;
+document.getElementById('result2').innerHTML=res2 ;
+
+document.getElementById('resUnit1').innerHTML="mm";
+document.getElementById('resUnit2').innerHTML="SQ mm" ;
+
+
+}
+
+</script>
+
+</head>
+
+<body onload="loadDefaults()">
 <div>Select a shape</div>
 <div>Rectangle</div>
 <div>Circle</div>
@@ -11,6 +56,30 @@
 <div>Cylinder</div>
 <div>Triangle</div>
 <div>Pyramid</div>
+
+
+
+<div>-----------------------------</div>
+<div id="attrib1">   </div> <div ><input type=text id="input1"></div><div id="unit1"></div> 
+<div id="attrib2">  </div> <div ><input type=text id="input2"></div><div id="unit2"></div> 
+<div id="attrib3">   </div> <div ><input type=text id="input3"></div><div id="unit3"></div> 
+<div id="attrib4">  </div> <div ><input type=text id="input4"></div><div id="unit4"></div> 
+<div id="attrib5">   </div> <div ><input type=text id="input5"></div><div id="unit5"></div> 
+<div id="attrib6">  </div> <div ><input type=text id="input6"></div><div id="unit6"></div> 
+<div id="attrib7">   </div> <div ><input type=text id="input7"></div><div id="unit7"></div> 
+<div id="attrib8">  </div> <div ><input type=text id="input8"></div><div id="unit8"></div> 
+
+<div>-----------------------------</div>
+<div id='showshape'>
+<div  id="resArrtib1"> </div> <div  id="result1"> </div><div id="resUnit1"></div> 
+<div  id="resArrtib2"> </div> <div  id="result2"> </div><div id="resUnit2"></div> 
+<div  id="resArrtib3"> </div> <div  id="result3"> </div><div id="resUnit3"></div> 
+<div  id="resArrtib4"> </div> <div  id="result4"> </div><div id="resUnit4"></div> 
+<div  id="resArrtib5"> </div> <div  id="result5"> </div><div id="resUnit5"></div> 
+<div  id="resArrtib6"> </div> <div  id="result6"> </div><div id="resUnit6"></div> 
+<div>-----------------------------</div>
+
+</div>
 </body>
 
 </html>
